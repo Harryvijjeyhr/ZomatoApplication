@@ -1,0 +1,24 @@
+package com.capgemini.repository;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.assertj.core.util.Arrays;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.capgemini.model.Payment;
+
+
+class PayamentRepositoryTest {
+
+	@Autowired
+	private PayamentRepository paymentRepo;
+	
+	@Test
+	public void PaymentRepositorys() {
+		Payment pay = new Payment("202",0,80,"627dca4f521ccc74867e775a",null);
+	}
+
+	
+
+}

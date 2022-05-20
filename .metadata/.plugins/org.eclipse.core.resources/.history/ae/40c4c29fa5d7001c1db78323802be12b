@@ -1,0 +1,26 @@
+package com.capgemini.repository;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.capgemini.model.MenuItem;
+import com.capgemini.model.Restaurant;
+
+class MenuItemRepositoryTest {
+
+	@Autowired
+	private MenuItemRepository MenuRepo;
+	
+	
+	@Test
+	public void givenMenuItemCreated() {
+		MenuItem m = new MenuItem("203","A2B","29374263423423","Idly","Served with vadacurry","20");
+		MenuRepo.save(m);
+		MenuItem m2 =MenuRepo.findById(m.getId()).get();//Fectching the data from database
+		assertNotNull(m2); //Check if it is returning the restaurant object
+		assertEquals(m.getName(),m2.getName());
+	}
+
+}

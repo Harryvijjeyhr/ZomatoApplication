@@ -1,0 +1,36 @@
+package com.capgemini.service;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.capgemini.model.Restaurant;
+import com.capgemini.repository.RestuarantRepository;
+
+@SpringBootTest
+@ExtendWith(MockitoExtension.class)
+class RestaurantServiceTest {
+
+	@Mock
+	private RestuarantRepository rr;
+	
+	
+	@InjectMocks
+	private RestaurantServiceImpl rsl;
+	
+
+	@Test
+	public void TestAddRestaurant() {
+		Restaurant r =new Restaurant("243","parthasarathy");
+		when(rr.save(any())).thenReturn(r);
+		rsl.addRestaurant(r);
+		verify(rr,times(1)).save(any);
+	}
+
+}

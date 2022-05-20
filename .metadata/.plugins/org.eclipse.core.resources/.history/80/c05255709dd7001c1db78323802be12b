@@ -1,0 +1,39 @@
+package com.capgemini.service;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.capgemini.model.Order;
+import com.capgemini.repository.OrderRepository;
+
+@SpringBootTest
+@ExtendWith(MockitoExtension.class)
+class OrderServiceTest {
+
+	@Mock
+	private OrderRepository OrdRepo;
+	
+	@InjectMocks
+	private OrderServiceImpl OrdSerImpl;
+	
+	
+	 
+	@Test
+	public void createOrderImpl() {
+		Order ord=new Order("21","627dc5d7304a886934f68436",Arrays.asList([{"idly",20,2}]),40);
+		when(OrdRepo.save(any())).thenReturn(ord);
+		OrdSerImpl.createOrder(ord);
+		verify(OrdRepo,times(1)).save(any());
+	}
+
+}

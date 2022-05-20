@@ -1,0 +1,63 @@
+package com.capgemini.service;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import com.capgemini.model.Order;
+import com.capgemini.repository.OrderRepository;
+
+@SpringBootTest
+@ExtendWith(MockitoExtension.class)
+class OrderServiceTest {
+
+	@Mock
+	private OrderRepository OrdRepo;
+	
+	@InjectMocks
+	private OrderServiceImpl OrdSerImpl;
+	
+	
+	 
+	@Test
+	public void createOrderImpl() {
+		Order ord=new Order("21","627dc5d7304a886934f68436",40);
+		when(OrdRepo.save(any())).thenReturn(ord);
+		OrdSerImpl.createOrder(ord);
+		verify(OrdRepo,times(1)).save(any());
+	}
+	
+	@Test
+	public void getAllOrderTest() {
+		Order f1 = new Order("12","627dc5d7304a886934f68336",40);
+		Order f2 = new Order(13, "dwarkadhish hotel", 25.5689, 87.4968, "hyderabad", 868620);
+		Order f3 = new Order(14, "pizzeria hotel", 25.5689, 87.4968, "delhi", 541220);
+		OrdRepo.save(f1);
+		OrdRepo.save(f2);
+		OrdRepo.save(f3);
+		List<Order> fList = new ArrayList<>();
+		fList.add(f1);
+		fList.add(f2);
+		fList.add(f3);
+		
+		when(OrdRepo.findAll()).thenReturn(fList);
+		List<Order> fList1 = OrdSerImpl.getAllOrder();
+		assertEquals(fList, fList1);
+		verify(OrdRepo, times(1)).save(f1);
+//		verify(fruRepo, times(1)).findAll();
+	}
+
+}

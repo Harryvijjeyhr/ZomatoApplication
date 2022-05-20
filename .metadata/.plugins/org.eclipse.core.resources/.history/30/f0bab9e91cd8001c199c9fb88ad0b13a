@@ -1,0 +1,27 @@
+package com.capgemini.repository;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.capgemini.model.User;
+
+class UserRepositoryTest {
+
+	@Autowired
+	private UserRepository UserRepo;
+	
+	
+	
+	@Test
+	public void givenUserShouldReturnId() {
+		User r = new User(21,"harry","password","prem@gmail.com","ROLE_USER");
+		UserRepo.save(r);
+		User r2 =UserRepo.findByEmail(r.getEmail());
+		assertNotNull(r2);
+		assertEquals(r.getEmail(),r2.getEmail());
+	}
+
+}
+findById(r.getId()).get()

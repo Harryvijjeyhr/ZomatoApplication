@@ -1,0 +1,32 @@
+package com.capgemini.controller;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.test.web.servlet.MockMvc;
+
+import com.capgemini.model.User;
+import com.capgemini.service.UserService;
+@ExtendWith(MockitoExtension.class)
+class UserControllerTest {
+
+	private MockMvc mockmvc;
+	
+	@Mock
+	private UserService UserServ;
+	private User user;
+	private List<User>UserList;
+	
+	@InjectMocks
+	private UserController uc;
+	@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+
+}

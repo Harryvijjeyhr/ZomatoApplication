@@ -1,0 +1,72 @@
+package com.capgemini.model;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@Document
+public class MenuItem {
+	//Attributes
+	@Id
+    private String id;
+	private Restaurant rest;
+    private String restaurantId;
+    private String name;
+    private String description;
+    private int price;
+    //defaultConstructor
+	public MenuItem() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	//Parameterised constructor
+	public MenuItem(String id, String restaurantId, String name, String description, int price) {
+		super();
+		this.id = id;
+		this.restaurantId = restaurantId;
+		this.name = name;
+		this.description = description;
+		this.price = price;
+	}
+	//Getter and Setter
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getRestaurantId() {
+		return restaurantId;
+	}
+	public void setRestaurantId(String restaurantId) {
+		this.restaurantId = restaurantId;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public int getPrice() {
+		return price;
+	}
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	//toString
+	@Override
+	public String toString() {
+		return "MenuItem [id=" + id + ", restaurantId=" + restaurantId + ", name=" + name + ", description="
+				+ description + ", price=" + price + "]";
+	}
+    
+    
+}

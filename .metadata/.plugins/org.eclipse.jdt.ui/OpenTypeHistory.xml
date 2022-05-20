@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=OrderService/C:\/Users\/premv\/.m2\/repository\/org\/springframework\/data\/spring-data-commons\/2.6.4\/spring-data-commons-2.6.4.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.data=/=/maven.artifactId=/spring-data-commons=/=/maven.version=/2.6.4=/=/maven.scope=/compile=/&lt;org.springframework.data.repository(PagingAndSortingRepository.class[PagingAndSortingRepository" modifiers="1537" timestamp="1650613802013"/>
+    <typeInfo handle="=LoginRegistration/C:\/Users\/premv\/.m2\/repository\/org\/springframework\/data\/spring-data-mongodb\/3.3.4\/spring-data-mongodb-3.3.4.jar=/maven.pomderived=/true=/=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.data=/=/maven.artifactId=/spring-data-mongodb=/=/maven.version=/3.3.4=/=/maven.scope=/compile=/&lt;org.springframework.data.mongodb.repository(MongoRepository.class[MongoRepository" modifiers="1537" timestamp="1651077863201"/>
+</typeInfoHistroy>

@@ -1,0 +1,52 @@
+package com.capgemini.repository;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import com.capgemini.model.ItemQuantity;
+import com.capgemini.model.Order;
+
+@SpringBootTest
+@ExtendWith(SpringExtension.class)
+class OrderRepositoryTest {
+
+	
+	@Autowired
+	private OrderRepository OrderRepo;
+	
+	@Test
+	public void OrderReturn() {
+		ItemQuantity q = new ItemQuantity("idly",20,1);
+		Order r = new Order();
+		r.setId("20");
+		r.setRestaurantId("627dc5d7304a886934f68336");
+		r.getItems();
+		r.setTotalPrice(20);
+		OrderRepo.save(r);
+		assertNotNull(OrderRepo.findById(r.getId()).get());
+	}
+	
+	@Test
+	public void shouldReturnAllFoods() {
+		ItemQuantity q1 = new ItemQuantity("idly",20,1);
+		ItemQuantity q2 = new ItemQuantity("vadai",20,1);
+		Order f3 = new Order("21","627dc5d7304a886934f68336",(null),20);
+		Order f4 = new Order();
+		OrderRepo.save(f3);
+		OrderRepo.save(f4);
+		List<Order> OrderList = (List<Order>)OrderRepo.findAll();
+		assertEquals("627dc5d7304a886934f68336",OrderList.get(2).getRestaurantId());
+	}
+
+}
+
+

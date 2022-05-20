@@ -1,0 +1,36 @@
+package com.capgemini.repository;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import com.capgemini.model.Order;
+
+@SpringBootTest
+@ExtendWith(SpringExtension.class)
+class OrderRepositoryTest {
+
+	
+	@Autowired
+	private OrderRepository OrderRepo;
+	
+	@Test
+	public void OrderReturn() {
+		Order r = new Order();
+		r.setId("20");
+		r.setRestaurantId("2006");
+		r.setItems(null);
+		r.setTotalPrice(20);
+		OrderRepo.save(r);
+		assertNotNull(OrderRepo.findById(r.getId()).get());
+	}
+	}
+
+

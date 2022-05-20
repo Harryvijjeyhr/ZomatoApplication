@@ -1,0 +1,20 @@
+package com.capgemini.model;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+import com.capgemini.repository.RestuarantRepository;
+
+class RestaurantTest {
+
+	private RestuarantRepository RestRepo;
+	
+	Restaurant res = new Restaurant();
+	
+	@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+
+}
