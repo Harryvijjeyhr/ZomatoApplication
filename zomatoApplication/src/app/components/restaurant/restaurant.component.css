@@ -1,0 +1,22 @@
+
+/* 
+.card{
+   background-color: transparent;
+   box-shadow: 11px 8px 21px -8px rgba(0,0,0,0.75);
+   -webkit-box-shadow: 11px 8px 21px -8px rgba(0,0,0,0.75);
+   -moz-box-shadow: 11px 8px 21px -8px rgba(0,0,0,0.75);
+}
+
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+    background-color: darkslategray;
+} */
+
+mat-card{
+    overflow: auto;
+}
+section{
+    height: 100%;
+    background-color: darkcyan;
+}

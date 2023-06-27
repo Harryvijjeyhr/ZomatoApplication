@@ -1,0 +1,14 @@
+.form-control{
+    box-shadow: none;
+    border: none    ;
+}
+.card{
+    box-shadow: 11px 8px 21px -8px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 11px 8px 21px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 11px 8px 21px -8px rgba(0,0,0,0.75);
+}
+
+section{
+    height: 100%;
+    background-color: cadetblue;
+}

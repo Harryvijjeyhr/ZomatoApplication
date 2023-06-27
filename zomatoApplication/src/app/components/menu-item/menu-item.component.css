@@ -1,0 +1,11 @@
+mat-card:hover{
+    box-shadow: -4px -1px 21px -5px rgba(212,45,124,0.55);
+    -webkit-box-shadow: -4px -1px 21px -5px rgba(212,45,124,0.55);
+    -moz-box-shadow: -4px -1px 21px -5px rgba(212,45,124,0.55);
+    transform: scale(1.05);
+}
+
+section{
+    height: 100%;
+    background-color: rgb(97, 151, 193);
+}

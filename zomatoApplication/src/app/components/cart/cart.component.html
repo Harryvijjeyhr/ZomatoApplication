@@ -1,0 +1,179 @@
+
+<div class="container-fluid">
+    <br />
+   
+    <div class="container">
+      <a 
+        
+        
+        data-bs-toggle="modal"
+        data-bs-target="#Modal"
+      >
+        <mat-card class="text-center shadow" style="width:150px ;">
+          <mat-card-content>
+            <h2>Create Order</h2>
+            <p>Order your food</p>
+          </mat-card-content>
+        </mat-card>
+      </a>
+    </div>
+
+    <div
+      class="modal fade"
+      id="Modal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">OrderItems</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="addFoodForm">
+              <div class="mb-3">
+                <label for="MenuName" class="form-label">MenuName</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="MenuName"
+                  placeholder="MenuName"
+                  name="menuName"
+                  formControlName="menuName"
+                  required
+                />
+              </div>
+              <br />
+              <div class="mb-3">
+                <label for="Price" class="form-label">Price</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="Price"
+                  placeholder="Price"
+                  name="price"
+                  formControlName="price"
+                  required
+                />
+              </div>
+              <br>
+              <div class="mb-3">
+                <label for="Price" class="form-label">Quantity</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="quantity"
+                  value="1"
+                  placeholder="quantity"
+                  name="quantity"
+                  formControlName="quantity"
+                  required
+                />
+              </div>
+              <br>
+              <div class="mb-3">
+                <label for="totalPrice" class="form-label">totalPrice</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="totalPrice"
+                  placeholder="totalPrice"
+                  name="totalPrice"
+                  formControlName="totalPrice"
+                  required
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              id="cancel"
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              (click)="Addorder()"
+              type="button"
+              class="btn btn-primary"
+            >
+              Add
+            </button>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+    <br/><br/>
+    <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
+      <div class="col"  *ngFor="let order of order">
+        <div class="card text-center bg-transparent "   >
+          <div class="card-body" >
+            <h5 class="card-title">{{order.menuName}} </h5>
+            <h4 class="card-content">{{order.price |currency:'INR'}}</h4>
+            <h3 class="card-content">{{order.totalPrice}}</h3>
+            <button class="btn btn-primary" (click)="checkout()">payment</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+   
+  </div>
+
+ <!-- <ng-container *ngIf="true">
+  <div class="container">
+    <div class="card-table">
+      <div class="cart-menu">
+        <table class="table table-responsive">
+          <thead>
+            <tr>
+              <th>S no</th>
+              <th>menuName</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>totalPrice</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr >
+              <td>01</td>
+              <td>{{menuName }}</td>
+              <td>{{price | currency: "INR" }}</td>
+              <td><input type="number"></td>
+              <td>total</td>
+              <td>
+                <button class="btn btn-danger">
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</ng-container>  -->
+<!-- 
+<ng-container *ngIf="false">
+  <div class="container">
+    <div class="card">
+      <h5 class="class-title">My Cart</h5>
+    </div>
+    <div class="center">
+      <h4>Your cart is empty</h4>
+      <h5>Add item to it now</h5>
+      <button class="btn btn-primary">Shop now</button>
+    </div>
+  </div>
+</ng-container> -->

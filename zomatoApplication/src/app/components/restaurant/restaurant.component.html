@@ -1,0 +1,29 @@
+<section>
+  <div class="container">
+    <div class="m-0">
+      <div class="row">
+        <h2 class="m-3">Restaurants</h2>
+        <div
+          class="col-lg-3 col-sm-2 m-2"
+          *ngFor="let restaurant of restaurant"
+        >
+          <mat-card class="text-center" style="width: 15rem">
+            <img src="" alt="" />
+            <mat-card-content>
+              <h1>{{ restaurant.restaurantName }}</h1>
+            </mat-card-content>
+            <mat-card-actions>
+              <button
+                class="bg-primary"
+                [routerLink]="['/restaurant/menuItem']"
+                routerLinkActive="router-link-active"
+              >
+                view menu
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

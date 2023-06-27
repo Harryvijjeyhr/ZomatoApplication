@@ -1,0 +1,81 @@
+<section>
+  <div class="logincontent">
+    <div class="container-fluids d-flex justify-content-center">
+      <div class="card" style="width: 30rem; margin-top: 30px">
+        <div class="text-center">
+          <h1 class="text-center">Signup</h1>
+          <form action="" [formGroup]="registerForm" (ngSubmit)="register()">
+            <mat-form-field class="full-width form-group" style="width: 20rem">
+              <mat-label>email</mat-label>
+              <input
+                type="email"
+                required
+                class="form-control"
+                formControlName="email"
+                id="email"
+                name="email"
+                matInput
+              />
+            </mat-form-field>
+            <br />
+            <mat-form-field class="full-width form-group" style="width: 20rem">
+              <mat-label>name</mat-label>
+              <input
+                type="text"
+                required
+                class="form-control shadow-none"
+                id="name"
+                formControlName="name"
+                name="name"
+                matInput
+              />
+            </mat-form-field>
+            <br />
+            <mat-form-field class="full-width form-group" style="width: 20rem">
+              <mat-label>phoneNumber</mat-label>
+              <input
+                type="tel"
+                class="form-control shadow-none"
+                required
+                id="mobileNo"
+                name="mobileNo"
+                formControlName="mobileNo"
+                matInput
+              />
+            </mat-form-field>
+            <br />
+            <mat-form-field class="full-width form-group" style="width: 20rem">
+              <mat-label>Password</mat-label>
+              <input
+                type="Password"
+                class="form-control shadow-none"
+                formControlName="password"
+                name="password"
+                required
+                matInput
+              />
+            </mat-form-field>
+            <br />
+            <div class="container text-center p-3">
+              <button type="submit" mat-raised-button color="primary">
+                Login
+              </button>
+              <p class="m-2">
+                If already a User ?<a
+                  id="a"
+                  [routerLink]="['/login']"
+                  routerLinkActive="router-link-active"
+                >
+                  Click Here</a
+                >
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<br />
+<br />
+<app-footer></app-footer>

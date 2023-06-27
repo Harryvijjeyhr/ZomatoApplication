@@ -1,0 +1,9 @@
+.card{
+    border: 1px solid none;
+    background-color: beige;
+}
+
+.card:hover{
+    border: 2px solid green;
+    transform: scale(1.05);
+}

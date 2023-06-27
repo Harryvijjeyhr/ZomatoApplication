@@ -1,0 +1,88 @@
+<section>
+  <div class="container-fluid">
+    <br />
+    <!-- Button trigger modal  FOR RESTAURANT-->
+    <div class="container">
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#Modal"
+      >
+        Add Restaurant
+      </button>
+    </div>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="Modal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Restaurant</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="addFoodForm">
+              <div class="mb-3">
+                <label for="foodname" class="form-label">RestaurantName</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="foodname"
+                  placeholder="RestaurantName"
+                  name="restaurantName"
+                  formControlName="restaurantName"
+                />
+                <!-- <span>
+                    <small *ngIf="name && name.invalid && name.touched">Food name is required.</small>
+                </span> -->
+              </div>
+              <br />
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              id="cancel"
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              (click)="addRestaurant()"
+              type="button"
+              class="btn btn-primary"
+            >
+              Add
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br /><br />
+    <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
+      <div class="col" *ngFor="let restaurant of restaurant">
+        <div class="card text-center bg-transparent border-success">
+          <div class="card-body">
+            <img src="" alt="" />
+            <h5 class="card-title">{{ restaurant.restaurantName }}</h5>
+            <br /><br />
+            <button class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br /><br />
+  </div>
+</section>

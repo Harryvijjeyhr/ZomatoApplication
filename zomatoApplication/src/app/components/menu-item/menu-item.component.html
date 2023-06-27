@@ -1,0 +1,32 @@
+<section>
+  <div>
+    <div class="container-fluid">
+      <div class="m-4">
+        <div class="row">
+          <h2>Menu Items</h2>
+
+          <div
+            class="col-lg-2 col-sm-3 m-2"
+            *ngFor="let restaurant of restaurant"
+          >
+            <mat-card class="text-center" style="max-width: 15rem">
+              <img src="" alt="" />
+              <mat-card-content>
+                <h4>
+                  <b>{{ restaurant.menuName }}</b>
+                </h4>
+                <p>{{ restaurant.price | currency: "INR" }}</p>
+              </mat-card-content>
+              <mat-card-actions>
+                <button (click)="AddCart(restaurant)">
+                  <mat-icon style="font-size: 18px" color="accent">add</mat-icon
+                  >Add to cart
+                </button>
+              </mat-card-actions>
+            </mat-card>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

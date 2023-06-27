@@ -1,0 +1,90 @@
+<section>
+  <div class="container-fluid banner">
+    <div
+      id="carouselBannerInterval"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img
+            src="../../../assets/img/wide-background.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img
+            src="../../../assets/img/bannerTwo.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="../../../assets/img/bannerThree.jpg"
+            class="d-block w-100"
+            alt="..."
+          />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselBannerInterval"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselBannerInterval"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+  <div class="container-fluid sectionTwo">
+    <br />
+    <div class="content text-center">
+      <h3 id="title">Zomato</h3>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row m-4">
+      <div class="col">
+        <mat-card style="max-width:400px ;" [routerLink]="['/login']" routerLinkActive="router-link-active" >
+        <img class="cards" mat-card-image src="../../../assets/img/cardOne.jpg" >
+        <mat-card-content>
+          <h3 class="m-0">Order Online</h3>
+          <p>Stay home and Order at your DoorStep</p>
+        </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="col">
+        <mat-card style="max-width:400px ;" >
+        <img class="cards" mat-card-image src="../../../assets/img/cardTwo.jpg" >
+        <mat-card-content>
+          <h3 class="m-0">add Restaurant</h3>
+          <p>Add your  Restaurant </p>
+        </mat-card-content>
+        </mat-card>
+      </div>
+      <div class="col">
+        <mat-card style="max-width:400px ;">
+        <img class="cards" mat-card-image src="../../../assets/img/CardThree.jpg" >
+        <mat-card-content>
+          <h3 class="m-0">Nightlife and Clubs</h3>
+          <p>Explore the city's top nightlife outlets</p>
+        </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+    <br>
+    <br>  
+  </div>
+</section>
